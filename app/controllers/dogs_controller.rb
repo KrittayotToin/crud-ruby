@@ -3,6 +3,8 @@ class DogsController < ApplicationController
 
   def index
     @dogs = Dog.all
+    @dog = Dog.new(name: "jummeng")
+    @bark = @dog.bark
   end
 
   def show

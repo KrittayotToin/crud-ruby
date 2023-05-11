@@ -1,2 +1,8 @@
 class Dog < ApplicationRecord
-end
+ 
+    
+    def bark
+      "Woof woof! "
+    end
+  end
+  

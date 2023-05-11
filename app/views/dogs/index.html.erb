@@ -1,9 +1,39 @@
+<!--
+<h1>Dog Bark</h1>
+
+<p><%= @bark %></p>
 <table>
   <% @dogs.each do |dog| %>
     <tr>
       <td><%= link_to dog.name, dog_path(dog) %></td>
+      
+      <td><%= dog.name %></td>
+      
       <td><%= button_to 'Edit', edit_dog_path(dog), method: 'get'%></td>
       <td><%= button_to 'Remove', dog_path(dog), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
   <% end %>
 </table>
+
 <%= link_to "Add a New Dog", new_dog_path %>
+-->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">NAME DOG</th>
+      <th scope="col">MOTTO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @dogs.each_with_index do |dog, index| %>
+    <tr>
+    <th scope="row"><%= index + 1 %></th>
+    <td><%= dog.name %></td>
+    <td><%= dog.motto %></td>
+    <td>  <%= link_to 'Edit', edit_dog_path(dog)%></td>
+    <td><%= button_to 'Remove', dog_path(dog), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
+   
+    </tr>
+     <% end %>
+  </tbody>
+</table>

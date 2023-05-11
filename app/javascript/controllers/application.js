@@ -1,4 +1,8 @@
 import { Application } from "@hotwired/stimulus"
+import 'angular'
+import 'angular-resource'
+import 'angular-rails-templates'
+import 'angular-rails-csrf'
 
 const application = Application.start()
 
